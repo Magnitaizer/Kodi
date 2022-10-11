@@ -30,4 +30,13 @@ sudo systemctl enable sshd.service
 
 sudo systemctl disable sddm.service
 
-reboot
+echo "Installation Successful!"
+
+while true; do
+    read -p "Would you like to reboot? " yn
+    case $yn in
+        [Yy]* ) sudo reboot; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
