@@ -1,16 +1,12 @@
 #!/bin/sh
 
 pacman -Syu  --noconfirm
-pacman -S python-pip kodi --noconfirm
+pacman -S kodi --noconfirm
 pacman -R pulseaudio pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-rtp pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-pa pulseaudio-alsa pulseaudio-ctl manjaro-pulse plasma-pa --noconfirm
-
-pip install pynput
 
 if grep -q 'DEFAULT_SESSION=kodi' "/home/$USER/.xinitrc"; then
    echo 'skipping this part...'
 else
-   echo ' ' >> /home/$USER/.xinitrc
-   echo 'exec python3 Kodi/local_control.py &' >> /home/$USER/.xinitrc
 #  echo 'xset s off -dpms' >> /home/$USER/.xinitrc
    sed -i 's+DEFAULT_SESSION=.*+DEFAULT_SESSION=kodi+' /home/$USER/.xinitrc
 fi
