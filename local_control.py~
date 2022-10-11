@@ -44,8 +44,8 @@ while True:
                         keyboard.press(Key.enter)
                         keyboard.release(Key.enter) 
                       case "Back":
-                        keyboard.press(Key.esc)
-                        keyboard.release(Key.esc) 
+                        keyboard.press('b')
+                        keyboard.release('b') 
                       case "Home":
                         keyboard.press('h')
                         keyboard.release('h') 
@@ -53,14 +53,14 @@ while True:
                         keyboard.press(Key.enter)
                         keyboard.release(Key.enter)
                       case "Info":
-                        keyboard.press('o')
-                        keyboard.release('o')
+                        keyboard.press('i')
+                        keyboard.release('i')
                       case "Play":
-                        keyboard.press(Key.space)
-                        keyboard.release(Key.space) 
+                        keyboard.press('p')
+                        keyboard.release('p') 
                       case "Pause":
-                        keyboard.press(Key.space)
-                        keyboard.release(Key.space)
+                        keyboard.press('p')
+                        keyboard.release('p') 
                       case "Stop":
                         keyboard.press('x')
                         keyboard.release('x') 
