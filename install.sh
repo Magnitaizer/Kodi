@@ -2,7 +2,7 @@
 
 pacman -Syu  --noconfirm
 pacman -S kodi --noconfirm
-pacman -R pulseaudio pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-rtp pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-pa pulseaudio-alsa pulseaudio-ctl manjaro-pulse plasma-pa --noconfirm
+pacman -R pulseaudio pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-alsa pulseaudio-ctl manjaro-pulse plasma-pa --noconfirm
 
 if grep -q 'DEFAULT_SESSION=kodi' "/home/$USER/.xinitrc"; then
    echo 'skipping this part...'
