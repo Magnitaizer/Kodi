@@ -1,8 +1,8 @@
 #!/bin/sh
 
-pacman -Syu  --noconfirm
-pacman -S kodi --noconfirm
-pacman -R pulseaudio pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-alsa pulseaudio-ctl manjaro-pulse plasma-pa --noconfirm
+sudo pacman -Syu  --noconfirm
+sudo pacman -S kodi --noconfirm
+sudo pacman -R pulseaudio pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-alsa pulseaudio-ctl manjaro-pulse plasma-pa --noconfirm
 
 if grep -q 'DEFAULT_SESSION=kodi' "/home/$USER/.xinitrc"; then
    echo 'skipping this part...'
@@ -20,14 +20,14 @@ else
   echo 'fi' >> /home/$USER/.bash_profile
 fi
 
-sed -i --follow-symlinks "38s+.*ExecStart.*+ExecStart=-/sbin/agetty -a "$USER' %I $TERM+' /etc/systemd/system/getty.target.wants/getty@tty1.service
+sudo sed -i --follow-symlinks "38s+.*ExecStart.*+ExecStart=-/sbin/agetty -a "$USER' %I $TERM+' /etc/systemd/system/getty.target.wants/getty@tty1.service
 
-sed -i 's+GRUB_TIMEOUT=.*+GRUB_TIMEOUT=0+' /etc/default/grub
+sudo sed -i 's+GRUB_TIMEOUT=.*+GRUB_TIMEOUT=0+' /etc/default/grub
 
-update-grub
+sudo update-grub
 
-systemctl enable sshd.service
+sudo systemctl enable sshd.service
 
-systemctl disable sddm.service
+sudo systemctl disable sddm.service
 
 reboot
