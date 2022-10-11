@@ -33,7 +33,7 @@ sudo systemctl disable sddm.service
 echo "Installation Successful!"
 
 while true; do
-    read -p "Would you like to reboot? " yn
+    read -p "Would you like to reboot? [Y/N]" yn
     case $yn in
         [Yy]* ) sudo reboot; break;;
         [Nn]* ) exit;;
